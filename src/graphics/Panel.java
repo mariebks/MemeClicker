@@ -1,13 +1,14 @@
 package graphics;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JPanel;
 
 public class Panel extends JPanel implements MouseListener {
@@ -21,6 +22,11 @@ public class Panel extends JPanel implements MouseListener {
 		g.clearRect(0, 0, getWidth(), getHeight());
 		//Screen.drawComponents(g);
 		g.drawRect(200, 200, 400, 200);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 100));
+		g.drawString("Hello", 1000, 1000);
+		//Rectangle2D rect = GuiMath.getStringBounds(g, "hello", 0, 0);
+		//Text.scaleFont("hello", rect, g, 1000);
+		//Text.drawString(g, "hello", CenterMode.RIGHT, 100, 100);
 		//g.drawOval(x, 200, 300, 200);
 	}
 	
