@@ -18,7 +18,7 @@ public class Main {
 		Panel panel = new Panel();
 		Panel panel1 = new Panel();
 		frame.add(panel);
-		frame.addMouseListener(panel);
+		panel.addMouseListener(panel);
 		Button button1 = new Button(100, 100, 100, 100);
 		Button button2 = new Button(200, 200, 200, 200);
 		Button button3 = new Button(300, 300, 300, 300);

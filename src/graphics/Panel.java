@@ -26,7 +26,7 @@ public class Panel extends JPanel implements MouseListener {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println(e.getX() + " " + e.getY());
+		System.out.println(e.getPoint());
 		int x = e.getX();
 		int y = e.getY();
 		if (x > 200 && x < 600 && y > 200 && y < 400) {
