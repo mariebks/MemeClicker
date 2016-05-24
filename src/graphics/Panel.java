@@ -19,14 +19,19 @@ public class Panel extends JPanel implements MouseListener {
 	public void paint(Graphics g1) {
 		Graphics2D g = (Graphics2D) g1;
 		g.clearRect(0, 0, getWidth(), getHeight());
-		Screen.drawComponents(g);
-		g.drawRect(x, 200, 400, 200);
+		//Screen.drawComponents(g);
+		g.drawRect(200, 200, 400, 200);
 		//g.drawOval(x, 200, 300, 200);
 	}
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
+		System.out.println(e.getX() + " " + e.getY());
+		int x = e.getX();
+		int y = e.getY();
+		if (x > 200 && x < 600 && y > 200 && y < 400) {
+			System.out.println("Button pressed");
+		}
 	}
 	
 
