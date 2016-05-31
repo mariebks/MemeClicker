@@ -91,33 +91,6 @@ public class Text
 		return g.getFont().deriveFont(newSize);
 	}
 
-	/**
-	 * Set rendering hints to make it look better
-	 * 
-	 * @param g the graphics object
-	 */
-	public static void applyRenderingHints(Graphics2D g, MainGui gui)
-	{
-		if (gui != null && gui.getSettings() != null) {
-			g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-					gui.getSettings().getValue("TextAntialias"));
-			g.setRenderingHint(RenderingHints.KEY_DITHERING,
-					gui.getSettings().getValue("Dither"));
-			g.setRenderingHint(RenderingHints.KEY_RENDERING,
-					gui.getSettings().getValue("RenderQuality"));
-			g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-					gui.getSettings().getValue("Antialias"));
-			g.setRenderingHint(RenderingHints.KEY_TEXT_LCD_CONTRAST, 100);
-			g.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
-					gui.getSettings().getValue("FactionalMetrics"));
-			g.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION,
-					gui.getSettings().getValue("AlphaInterpolation"));
-			g.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING,
-					gui.getSettings().getValue("ColorRenderQuality"));
-			g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL,
-					gui.getSettings().getValue("Stroke"));
-		}
-	}
 
 	/**
 	 * Scale a font to fit in a rectangle
