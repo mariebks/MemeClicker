@@ -17,10 +17,14 @@ public class Panel extends JPanel implements MouseListener {
 	
 	public List<Component> components = new ArrayList();
 	public int x = 0;
+	public int screenNumber = 0;
+	
+	public Graphics2D graphics;
 	
 	@Override
 	public void paint(Graphics g1) {
 		Graphics2D g = (Graphics2D) g1;
+		graphics = g;
 		g.clearRect(0, 0, getWidth(), getHeight());
 		//Screen.drawComponents(g);
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 100));
@@ -34,7 +38,7 @@ public class Panel extends JPanel implements MouseListener {
 		String str = "Hello";
 		
 		g.setFont(Text.scaleFont(str, rect, g));
-		Text.drawString(g, str, CenterMode.CENTER, (int)rect.getCenterX(), (int)rect.getCenterY());
+		Text.drawString(g, str, CenterMode.CENTER, (int) rect.getCenterX(), (int) rect.getCenterY());
 		g.drawImage(Main.img, 1000, 1000, 1000, 1000, null);
 		
 		//Text.scaleFont("hello", rect, g, 1000);
@@ -44,12 +48,12 @@ public class Panel extends JPanel implements MouseListener {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println(e.getPoint());
+/*		System.out.println(e.getPoint());
 		int x = e.getX();
 		int y = e.getY();
 		if (x > 200 && x < 600 && y > 200 && y < 400) {
 			System.out.println("Button pressed");
-		}
+		}*/
 	}
 	
 
@@ -63,6 +67,21 @@ public class Panel extends JPanel implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		int x = e.getX();
+		int y = e.getY();
+		if (screenNumber == 0) {
+			for (Component component : MenuScreen.components) {
+				if (x > component.getX() && x < component.getX() + component.getWidth() && y > component.getY() && y < component.getY() + component.getHeight()) {
+					graphics.clearRect(component.getX(), component.getY(), component.getWidth(), component.getHeight());
+					graphics.drawRect(component.getX() - 100, component.getY() - 100, component.getWidth() - 100, component.getHeight() - 100);
+					System.out.println(component.toString());
+				}
+			}
+		} else if (screenNumber == 1) {
+			
+		} else {
+			
+		}
 	}
 
 	@Override

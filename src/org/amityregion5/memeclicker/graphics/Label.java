@@ -17,7 +17,7 @@ public class Label extends Component {
 	
 	@Override
 	public void draw(Graphics2D g) {
-		g.drawRect(x, y, width, height);
+		g.drawRect(getX(), getY(), getWidth(), getHeight());
 	}
 	
 	

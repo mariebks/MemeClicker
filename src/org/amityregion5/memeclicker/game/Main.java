@@ -9,7 +9,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import org.amityregion5.memeclicker.graphics.Button;
+import org.amityregion5.memeclicker.graphics.TextButton;
 import org.amityregion5.memeclicker.graphics.Component;
 import org.amityregion5.memeclicker.graphics.Panel;
 import org.amityregion5.memeclicker.graphics.Screen;
@@ -27,10 +27,10 @@ public class Main {
 		Panel panel1 = new Panel();
 		frame.add(panel);
 		panel.addMouseListener(panel);
-		Button button1 = new Button(100, 100, 100, 100);
-		Button button2 = new Button(200, 200, 200, 200);
-		Button button3 = new Button(300, 300, 300, 300);
-		Button button4 = new Button(400, 400, 400, 400);
+		TextButton button1 = new TextButton(100, 100, 100, 100);
+		TextButton button2 = new TextButton(200, 200, 200, 200);
+		TextButton button3 = new TextButton(300, 300, 300, 300);
+		TextButton button4 = new TextButton(400, 400, 400, 400);
 		List<Component> components = new ArrayList<Component>();
 		components.add(button1);
 		components.add(button2);
