@@ -11,16 +11,16 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import org.amityregion5.memeclicker.game.Main;
+
 public class Panel extends JPanel implements MouseListener {
 	
 	public List<Component> components = new ArrayList();
 	public int x = 0;
-	public int y = 0;
 	public int screenNumber = 0;
 	public boolean isPressed = false;
-	public MouseEvent e;
+	
 	public Graphics2D graphics;
-	public int frameCount = 0;
 	
 	@Override
 	public void paint(Graphics g1) {
@@ -29,34 +29,36 @@ public class Panel extends JPanel implements MouseListener {
 		g.clearRect(0, 0, getWidth(), getHeight());
 		//Screen.drawComponents(g);
 		//g.setFont(new Font("TimesRoman", Font.PLAIN, 100));
-		/*g.drawString("Hello", (int) (getWidth() * .3), (int) (getHeight() * .3));*/
-		TextButton button = (TextButton) components.get(0);
-		Rectangle2D rect = new Rectangle2D.Double(button.getX(), button.getY(), button.getWidth(), button.getHeight());
-		g.drawRect((int) rect.getX(), (int) rect.getY(), (int) rect.getWidth(), (int) rect.getHeight());
-		rect.setRect(button.getX() + 10, button.getY() + 10, button.getWidth() - 20, button.getHeight() - 20);
-		String str = "Hello";
-		g.setFont(Text.scaleFont(str, rect, g));
-		Text.drawString(g, str, CenterMode.CENTER, (int) rect.getCenterX(), (int) rect.getCenterY());
-		/*g.drawImage(Main.img, 1000, 1000, 1000, 1000, null);*/
+		//g.drawString("Hello", (int) (getWidth() * .3), (int) (getHeight() * .3));
+		// u got rekt boi
+		
+		Rectangle2D rekt;
 		
 		if (isPressed == true) {
-			x = e.getX();
-			y = e.getY();
-			if (screenNumber == 0) {
-				for (Component component : MenuScreen.components) {
-					if (x > component.getX() && x < component.getX() + component.getWidth() && y > component.getY() && y < component.getY() + component.getHeight()) {
-						graphics.clearRect(component.getX() + 10, component.getY() + 10, component.getWidth() - 20, component.getHeight() - 20);
-						graphics.drawRect(component.getX() - 100, component.getY() - 100, component.getWidth() - 100, component.getHeight() - 100);
-						System.out.println(component.toString());
-						break;
-					}
-				}
-			}
+			rekt = new Rectangle2D.Double(200,200,100,100);
+			g.drawRect((int) rekt.getX(), (int) rekt.getY(), (int) rekt.getWidth(), (int) rekt.getHeight());
+			rekt.setRect(210, 210, 80, 80);
+			String str = "Hello";
+			g.setFont(Text.scaleFont(str, rekt, g));
+			Text.drawString(g, str, CenterMode.CENTER, (int) rekt.getCenterX(), (int) rekt.getCenterY());
 		} else {
-			
+			rekt = new Rectangle2D.Double(200,200,400,200);
+			g.drawRect((int) rekt.getX(), (int) rekt.getY(), (int) rekt.getWidth(), (int) rekt.getHeight());
+			rekt.setRect(210, 210, 380, 180);
+			String str = "Hello";
+			g.setFont(Text.scaleFont(str, rekt, g));
+			Text.drawString(g, str, CenterMode.CENTER, (int) rekt.getCenterX(), (int) rekt.getCenterY());
 		}
+/*		g.drawRect((int) rekt.getX(), (int) rekt.getY(), (int) rekt.getWidth(), (int) rekt.getHeight());
 		
+		rekt.setRect(210, 210, 380, 180);
 		
+		String str = "Hello";
+		
+		g.setFont(Text.scaleFont(str, rekt, g));
+		Text.drawString(g, str, CenterMode.CENTER, (int) rekt.getCenterX(), (int) rekt.getCenterY());*/
+		
+		//g.drawImage(Main.img, 1000, 1000, 1000, 1000, null);
 		
 		//Text.scaleFont("hello", rect, g, 1000);
 		//Text.drawString(g, "hello", CenterMode.RIGHT, 100, 100);
@@ -84,7 +86,21 @@ public class Panel extends JPanel implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		this.e = e;
+/*		int x = e.getX();
+		int y = e.getY();
+		if (screenNumber == 0) {
+			for (Component component : MenuScreen.components) {
+				if (x > component.getX() && x < component.getX() + component.getWidth() && y > component.getY() && y < component.getY() + component.getHeight()) {
+					graphics.clearRect(component.getX(), component.getY(), component.getWidth(), component.getHeight());
+					graphics.drawRect(component.getX() - 100, component.getY() - 100, component.getWidth() - 100, component.getHeight() - 100);
+					System.out.println(component.toString());
+				}
+			}
+		} else if (screenNumber == 1) {
+			
+		} else {
+			
+		}*/
 		isPressed = true;
 	}
 
