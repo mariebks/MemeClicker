@@ -9,9 +9,10 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import org.amityregion5.memeclicker.graphics.Component;
+import org.amityregion5.memeclicker.graphics.ImageButton;
 import org.amityregion5.memeclicker.graphics.MenuScreen;
 import org.amityregion5.memeclicker.graphics.Panel;
-import org.amityregion5.memeclicker.graphics.TextButton;
+import org.amityregion5.memeclicker.graphics.Text;
 
 public class Main {
 	
@@ -31,9 +32,16 @@ public class Main {
 		TextButton button3 = new TextButton(300, 300, 300, 300);
 		TextButton button4 = new TextButton(400, 400, 400, 400);*/
 		List<Component> components = new ArrayList<Component>();
-		TextButton button = new TextButton(100, 100, 100, 100);
+		Text button = new Text(100, 100, 100, 100);
+		try {
+			img = ImageIO.read(Main.class.getResource("/brain.png"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		ImageButton image = new ImageButton(200, 200, 200, 200);
 		components.add(button);
-		panel.components = components;
+		components.add(image);
+		//panel.components = components;
 		MenuScreen menu = new MenuScreen(components);
 		/*components.add(button1);
 		components.add(button2);
@@ -43,12 +51,6 @@ public class Main {
 		Screen.components.add(button2);
 		Screen.components.add(button3);
 		Screen.components.add(button4);*/
-		
-		try {
-			img = ImageIO.read(Main.class.getResource("/brain.png"));
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
 		Thread render = new Thread(()-> {
 		while (true) {
 

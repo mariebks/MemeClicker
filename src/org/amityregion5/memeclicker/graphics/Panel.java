@@ -25,16 +25,16 @@ public class Panel extends JPanel implements MouseListener {
 	@Override
 	public void paint(Graphics g1) {
 		Graphics2D g = (Graphics2D) g1;
-		graphics = g;
 		g.clearRect(0, 0, getWidth(), getHeight());
+		MenuScreen.drawComponents(g);
 		//Screen.drawComponents(g);
 		//g.setFont(new Font("TimesRoman", Font.PLAIN, 100));
 		//g.drawString("Hello", (int) (getWidth() * .3), (int) (getHeight() * .3));
 		// u got rekt boi
 		
-		Rectangle2D rekt;
+		//Rectangle2D rekt;
 		
-		if (isPressed == true) {
+/*		if (isPressed == true) {
 			rekt = new Rectangle2D.Double(210, 210, 380, 180);
 			g.drawRect((int) rekt.getX(), (int) rekt.getY(), (int) rekt.getWidth(), (int) rekt.getHeight());
 			rekt.setRect(210, 210, 380, 180);
@@ -48,7 +48,7 @@ public class Panel extends JPanel implements MouseListener {
 			String str = "Hello";
 			g.setFont(Text.scaleFont(str, rekt, g));
 			Text.drawString(g, str, CenterMode.CENTER, (int) rekt.getCenterX(), (int) rekt.getCenterY());
-		}
+		}*/
 /*		g.drawRect((int) rekt.getX(), (int) rekt.getY(), (int) rekt.getWidth(), (int) rekt.getHeight());
 		
 		rekt.setRect(210, 210, 380, 180);
