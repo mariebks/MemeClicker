@@ -35,9 +35,9 @@ public class Panel extends JPanel implements MouseListener {
 		Rectangle2D rekt;
 		
 		if (isPressed == true) {
-			rekt = new Rectangle2D.Double(200,200,100,100);
+			rekt = new Rectangle2D.Double(210, 210, 380, 180);
 			g.drawRect((int) rekt.getX(), (int) rekt.getY(), (int) rekt.getWidth(), (int) rekt.getHeight());
-			rekt.setRect(210, 210, 80, 80);
+			rekt.setRect(210, 210, 380, 180);
 			String str = "Hello";
 			g.setFont(Text.scaleFont(str, rekt, g));
 			Text.drawString(g, str, CenterMode.CENTER, (int) rekt.getCenterX(), (int) rekt.getCenterY());
