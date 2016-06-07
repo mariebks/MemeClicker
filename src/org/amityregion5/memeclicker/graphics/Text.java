@@ -130,9 +130,9 @@ public class Text extends Component
 	@Override
 	public void draw(Graphics2D g) {
 		Rectangle2D rekt;
-		rekt = new Rectangle2D.Double(200,200,400,200);
+		rekt = new Rectangle2D.Double(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 		g.drawRect((int) rekt.getX(), (int) rekt.getY(), (int) rekt.getWidth(), (int) rekt.getHeight());
-		rekt.setRect(210, 210, 380, 180);
+		rekt.setRect(rekt.getX() + 10, rekt.getY()  + 10, rekt.getWidth() - 20, rekt.getHeight() - 20);
 		g.setFont(Text.scaleFont(text, rekt, g));
 		Text.drawString(g, text, CenterMode.CENTER, (int) rekt.getCenterX(), (int) rekt.getCenterY());
 	}

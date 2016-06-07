@@ -16,6 +16,7 @@ import org.amityregion5.memeclicker.game.Main;
 public class Panel extends JPanel implements MouseListener {
 	
 	public List<Component> components = new ArrayList();
+	private List<Screen> screens = new ArrayList();
 	public int x = 0;
 	public int screenNumber = 0;
 	public boolean isPressed = false;
@@ -24,7 +25,11 @@ public class Panel extends JPanel implements MouseListener {
 	public void paint(Graphics g1) {
 		Graphics2D g = (Graphics2D) g1;
 		g.clearRect(0, 0, getWidth(), getHeight());
-		MenuScreen.drawComponents(g);
+		if (screenNumber == 0) {
+			screens.get(0).drawComponents(g);
+		} else if (screenNumber == 1) {
+			screens.get(1).drawComponents(g);
+		}
 		//Screen.drawComponents(g);
 		//g.setFont(new Font("TimesRoman", Font.PLAIN, 100));
 		//g.drawString("Hello", (int) (getWidth() * .3), (int) (getHeight() * .3));
@@ -100,14 +105,18 @@ public class Panel extends JPanel implements MouseListener {
 			
 		}
 		isPressed = true;*/
-		
-		int x = e.getX();
-		int y = e.getY();
-		System.out.println(x);
-		System.out.println(y);
-		for (Component component : MenuScreen.getComponents()) {
-			if (x > component.getX() && x < component.getX() + component.getWidth() && y > component.getY() && y < component.getY() + component.getHeight()) {
-					System.out.println("1");
+		if (screenNumber == 0) {
+			int x = e.getX();
+			int y = e.getY();
+			System.out.println(x);
+			System.out.println(y);
+			for (Component component : screens.get(0).getComponents()) {
+				if (x > component.getX() && x < component.getX() + component.getWidth() && y > component.getY() && y < component.getY() + component.getHeight()) {
+					if (component.getName().equals("newGame")) {
+						System.out.println("newgame clicked");
+						screenNumber = 1;
+					}
+				}
 			}
 		}
 	}
@@ -115,5 +124,13 @@ public class Panel extends JPanel implements MouseListener {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		isPressed = false;
+	}
+
+	public List<Screen> getScreens() {
+		return screens;
+	}
+
+	public void setScreens(List<Screen> screens) {
+		this.screens = screens;
 	}
 }
