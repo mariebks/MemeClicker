@@ -14,9 +14,11 @@ import java.awt.geom.Rectangle2D;
  */
 public class Text extends Component
 {
-	public Text(int x, int y, int width, int height) {
-		super(x, y, width, height);
-		// TODO Auto-generated constructor stub
+	private String text = "";
+	
+	public Text(int x, int y, int width, int height, String text, String name) {
+		super(x, y, width, height, name);
+		this.text = text;
 	}
 
 	/**
@@ -131,8 +133,7 @@ public class Text extends Component
 		rekt = new Rectangle2D.Double(200,200,400,200);
 		g.drawRect((int) rekt.getX(), (int) rekt.getY(), (int) rekt.getWidth(), (int) rekt.getHeight());
 		rekt.setRect(210, 210, 380, 180);
-		String str = "Hello";
-		g.setFont(Text.scaleFont(str, rekt, g));
-		Text.drawString(g, str, CenterMode.CENTER, (int) rekt.getCenterX(), (int) rekt.getCenterY());
+		g.setFont(Text.scaleFont(text, rekt, g));
+		Text.drawString(g, text, CenterMode.CENTER, (int) rekt.getCenterX(), (int) rekt.getCenterY());
 	}
 }

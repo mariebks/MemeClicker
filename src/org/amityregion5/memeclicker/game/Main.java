@@ -31,18 +31,18 @@ public class Main {
 		TextButton button2 = new TextButton(200, 200, 200, 200);
 		TextButton button3 = new TextButton(300, 300, 300, 300);
 		TextButton button4 = new TextButton(400, 400, 400, 400);*/
-		List<Component> components = new ArrayList<Component>();
-		Text button = new Text(100, 100, 100, 100);
+		List<Component> menuComponents = new ArrayList<Component>();
+		Text newGame = new Text(100, 100, 100, 100, "New Game", "newGame");
 		try {
 			img = ImageIO.read(Main.class.getResource("/brain.png"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		ImageButton image = new ImageButton(200, 200, 200, 200);
-		components.add(button);
-		components.add(image);
+		ImageButton image = new ImageButton(200, 200, 200, 200, "image");
+		//menuComponents.add(newGame);
+		menuComponents.add(image);
 		//panel.components = components;
-		MenuScreen menu = new MenuScreen(components);
+		MenuScreen.setComponents(menuComponents);
 		/*components.add(button1);
 		components.add(button2);
 		components.add(button3);

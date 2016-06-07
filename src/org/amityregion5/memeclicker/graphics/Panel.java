@@ -20,8 +20,6 @@ public class Panel extends JPanel implements MouseListener {
 	public int screenNumber = 0;
 	public boolean isPressed = false;
 	
-	public Graphics2D graphics;
-	
 	@Override
 	public void paint(Graphics g1) {
 		Graphics2D g = (Graphics2D) g1;
@@ -100,8 +98,18 @@ public class Panel extends JPanel implements MouseListener {
 			
 		} else {
 			
-		}*/
-		isPressed = true;
+		}
+		isPressed = true;*/
+		
+		int x = e.getX();
+		int y = e.getY();
+		System.out.println(x);
+		System.out.println(y);
+		for (Component component : MenuScreen.getComponents()) {
+			if (x > component.getX() && x < component.getX() + component.getWidth() && y > component.getY() && y < component.getY() + component.getHeight()) {
+					System.out.println("1");
+			}
+		}
 	}
 
 	@Override

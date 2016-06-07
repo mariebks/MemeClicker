@@ -7,12 +7,14 @@ public abstract class Component {
 	private int y;
 	private int width;
 	private int height;
+	private String name;
 	
-	public Component(int x, int y, int width, int height) {
+	public Component(int x, int y, int width, int height, String name) {
 		this.setX(x);
 		this.setY(y);
 		this.setWidth(width);
 		this.setHeight(height);
+		this.setName(name);
 	}
 	
 	
@@ -81,4 +83,20 @@ public abstract class Component {
 
 
 	public abstract void draw(Graphics2D g);
+
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 }
