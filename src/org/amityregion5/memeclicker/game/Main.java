@@ -9,7 +9,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import org.amityregion5.memeclicker.graphics.Component;
-import org.amityregion5.memeclicker.graphics.GameScreen;
 import org.amityregion5.memeclicker.graphics.ImageButton;
 import org.amityregion5.memeclicker.graphics.Panel;
 import org.amityregion5.memeclicker.graphics.Screen;
@@ -20,14 +19,18 @@ public class Main {
 	public static BufferedImage img;
 	
 	public static void main(String[] args) {
+		int horizontalRes = 1920;
+		int verticalRes = 1080;
 		List<Component> menuComponents = new ArrayList<Component>();
-		Text newGame = new Text(300, 300, 300, 300, "New Game", "newGame");
+		Text title = new Text((horizontalRes / 2) - 300, 100, 600, 100, "Meme Clicker", "title");
+		Text newGame = new Text((horizontalRes / 2) - 300, 600, 600, 80, "New Game", "newGame");
 		try {
 			img = ImageIO.read(Main.class.getResource("/brain.png"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 		ImageButton image = new ImageButton(200, 200, 200, 200, "image");
+		menuComponents.add(title);
 		menuComponents.add(newGame);
 		menuComponents.add(image);
 		Screen menu = new Screen(menuComponents);

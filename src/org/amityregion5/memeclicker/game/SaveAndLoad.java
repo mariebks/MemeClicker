@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 
 
 public class SaveAndLoad {
-	public int[] load() throws NumberFormatException, IOException{
+	public static int[] load() throws NumberFormatException, IOException{
 		int[] returner = new int[19];
 		BufferedReader f = new BufferedReader(new FileReader("cookie.in"));
 		for(int i = 0;i<20;i++){
