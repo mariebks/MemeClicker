@@ -12,7 +12,12 @@ public class Main1 {
 		}
 		else
 		{
-			int[] stuff = SaveAndLoad.load();
+			int[] stuff = ReadAndWrite.load();
+			if (stuff.length == 1) {
+				System.out.println("Invalid file to load");
+			} else {
+				
+			}
 			int a = stuff[0];
 			int b = stuff[1];
 			int c = stuff[2];
@@ -32,9 +37,7 @@ public class Main1 {
 			int q = stuff[16];
 			int r = stuff[17];
 			int s = stuff[18];
-
 			Load load = new Load(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s);
-
 		}
 
 		while(true)

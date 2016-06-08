@@ -10,14 +10,18 @@ public class Screen {
 	public Screen(List<Component> components) {
 		this.components = components;
 	}
-	
-	public List<Component> getComponents() {
-		return components;
-	}
 
 	public void drawComponents(Graphics2D g) {
 		for (Component component : components) {
 			component.draw(g);
 		}
+	}
+
+	public List<Component> getComponents() {
+		return components;
+	}
+
+	public void setComponents(List<Component> components) {
+		this.components = components;
 	}
 }
